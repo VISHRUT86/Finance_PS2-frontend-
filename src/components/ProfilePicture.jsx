@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./ProfilePicture.css"
+import "./ProfilePicture.css";
 
 const ProfilePicture = () => {
-  const [image, setImage] = useState(localStorage.getItem("profilePic") || "avatar.png");
+  const [image, setImage] = useState(
+    localStorage.getItem("profilePic") || "avatar.png"
+  );
   const [selectedFile, setSelectedFile] = useState(null);
 
   const handleFileChange = (e) => {
-    setSelectedFile(e.target.files[0]); // Store selected file
+    setSelectedFile(e.target.files[0]);
   };
 
   const handleUpload = async () => {
@@ -17,12 +19,16 @@ const ProfilePicture = () => {
     formData.append("image", selectedFile);
 
     try {
-      const response = await axios.post("https://b1-ibcx.onrender.com/upload", formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
+      const response = await axios.post(
+        "https://b1-ibcx.onrender.com/upload",
+        formData,
+        {
+          headers: { "Content-Type": "multipart/form-data" },
+        }
+      );
 
       const newImageUrl = response.data.imageUrl;
-      localStorage.setItem("profilePic", newImageUrl); // Save to localStorage
+      localStorage.setItem("profilePic", newImageUrl);
       setImage(newImageUrl);
     } catch (error) {
       console.error("Upload error:", error);

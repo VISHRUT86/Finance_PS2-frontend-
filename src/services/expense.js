@@ -11,7 +11,6 @@ export const addExpense = async (expenseData) => {
             headers: getAuthHeaders()
         });
 
-        // ✅ Page refresh after adding expense
         window.location.reload();
 
         return res.data;
@@ -62,7 +61,7 @@ export const deleteExpense = async (id) => {
             throw new Error(`Failed to delete expense: ${response.status}`);
         }
 
-        // ✅ Refresh page after successful delete
+     
         window.location.reload();
 
     } catch (error) {

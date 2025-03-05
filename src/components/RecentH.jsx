@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Papa from "papaparse"; // Importing the CSV library
+import Papa from "papaparse";
 import { getExpenses } from "../services/expense";
 import { getIncomes } from "../services/income";
 import "./RecentH.css";
@@ -14,47 +14,24 @@ const TransactionHistory = () => {
     fetchTransactions();
   }, []);
 
-  // const fetchTransactions = async () => {
-  //   try {
-  //     const expenses = await getExpenses();
-  //     const incomes = await getIncomes();
-  //     const allTransactions = [
-  //       ...expenses.map((exp) => ({ ...exp, type: "Expense" })),
-  //       ...incomes.map((inc) => ({ ...inc, type: "Income" })),
-  //     ]
-  //       .sort((a, b) => new Date(b.date) - new Date(a.date)) // Sort by date (newest first)
-  //       .slice(0, 4); // Keep only the last 4 transactions
-
-  //     setTransactions(allTransactions);
-  //   } catch (error) {
-  //     console.error("Error fetching transactions:", error);
-  //   }
-  // };
-
-
   const fetchTransactions = async () => {
     try {
-        const expenses = await getExpenses();
-        const incomes = await getIncomes();
+      const expenses = await getExpenses();
+      const incomes = await getIncomes();
 
-        // Combine and sort transactions by date (newest first)
-        const allTransactions = [
-            ...expenses.map((exp) => ({ ...exp, type: "Expense" })),
-            ...incomes.map((inc) => ({ ...inc, type: "Income" })),
-        ].sort((a, b) => new Date(b.date) - new Date(a.date)); 
+      const allTransactions = [
+        ...expenses.map((exp) => ({ ...exp, type: "Expense" })),
+        ...incomes.map((inc) => ({ ...inc, type: "Income" })),
+      ].sort((a, b) => new Date(b.date) - new Date(a.date));
 
-        // Keep only the last 4 transactions
-        const recentTransactions = allTransactions.slice(0, 4);
+      const recentTransactions = allTransactions.slice(0, 4);
 
-        setTransactions(recentTransactions);
+      setTransactions(recentTransactions);
     } catch (error) {
-        console.error("Error fetching transactions:", error);
+      console.error("Error fetching transactions:", error);
     }
-};
+  };
 
-
-
-  // ✅ Function to export transactions as CSV
   const exportToCSV = () => {
     const filteredTransactions = filterCategory
       ? transactions.filter((t) => t.category === filterCategory)
@@ -82,7 +59,6 @@ const TransactionHistory = () => {
     <div className="transaction-history">
       <h2>Transaction History</h2>
 
-      {/* ✅ Category Filter Dropdown */}
       <div className="filter-container">
         <label>Filter by Category:</label>
         <select
@@ -98,7 +74,6 @@ const TransactionHistory = () => {
         </select>
       </div>
 
-      {/* ✅ Transactions Table (Styled Like Previous One) */}
       <div className="table-container">
         <table className="transactions-table">
           <thead>
@@ -130,9 +105,7 @@ const TransactionHistory = () => {
           </tbody>
         </table>
       </div>
-            
-      </div>     
-    
+    </div>
   );
 };
 

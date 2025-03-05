@@ -13,7 +13,7 @@ const Notifications = () => {
     const token = localStorage.getItem("token");
 
     if (!token) {
-      console.log("❌ No token found, user might be unauthenticated");
+      console.log(" No token found, user might be unauthenticated");
       return;
     }
 
@@ -25,11 +25,11 @@ const Notifications = () => {
         }
       );
 
-      console.log("✅ Notifications Response:", response.data);
+      console.log(" Notifications Response:", response.data);
       setNotifications(response.data);
     } catch (error) {
-      console.error(
-        "❌ Error fetching notifications:",
+      console.log(
+        "Error fetching notifications:",
         error.response?.data || error.message
       );
     }
@@ -37,29 +37,29 @@ const Notifications = () => {
 
   const markAsRead = async (id) => {
     try {
-      console.log("🔍 Marking as read for ID:", id);
+      console.log(" Marking as read for ID:", id);
       const token = localStorage.getItem("token");
 
       if (!token) {
-        console.error("❌ No token found, unable to mark as read");
+        console.log(" No token found, unable to mark as read");
         return;
       }
 
       await axios.put(
         `http://localhost:5000/api/notifications/mark-read/${id}`,
-        { isRead: true }, // ✅ Ensure backend gets `isRead` update
+        { isRead: true },
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
-      console.log(`✅ Notification with ID ${id} marked as read`);
+      console.log(` Notification with ID ${id} marked as read`);
 
-      // ✅ Update UI instantly by filtering out the read notification
+      // Update UI instantly by filtering out the read notification
       setNotifications((prevNotifications) =>
         prevNotifications.filter((notification) => notification._id !== id)
       );
     } catch (error) {
-      console.error(
-        "❌ Error marking notification as read:",
+      console.log(
+        " Error marking notification as read:",
         error.response?.data || error.message
       );
     }

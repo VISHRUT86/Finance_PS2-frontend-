@@ -1,26 +1,23 @@
-/* Transaction.css */
-.transaction-table{
+.transaction-table {
   border-radius: 20px;
 }
 
-
-
-/* Container Styling */
 .transaction-history {
   height: 34.5rem;
-  max-width: 56.25rem; /* 900px -> 56.25rem */
-  margin: 1.25rem auto; /* 20px -> 1.25rem */
+  max-width: 56.25rem;
+  margin: 1.25rem auto;
   position: relative;
-  width: 41.25rem; /* 660px -> 41.25rem */
-  top: -36.375rem; /* -582px -> -36.375rem */
-  right: 1.75rem; /* 28px -> 1.75rem */
+  width: 41.25rem;
+  top: -36.375rem;
+  right: 1.75rem;
   background: #dfebdf;
-  padding: 4rem 1.5625rem; /* 64px 25px -> 4rem 1.5625rem */
-  border-radius: 1.125rem; /* 18px -> 1.125rem */
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  padding: 4rem 1.5625rem;
+  border-radius: 1.125rem;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   text-align: center;
 }
-/* Heading */
+
 h2 {
   color: black;
   font-size: 26px;
@@ -28,13 +25,12 @@ h2 {
   font-weight: bold;
 }
 
-/* Filter Dropdown */
 .filter-container {
   margin-bottom: 15px;
   text-align: center;
 }
 
-[data-theme="dark"] .filter-container label{
+[data-theme="dark"] .filter-container label {
   color: rgb(206, 206, 206);
 }
 .filter-container label {
@@ -44,9 +40,8 @@ h2 {
 }
 
 select {
-
   padding: 10px;
-  /* border: 1px solid #8d6767; */
+
   border-radius: 8px;
   border: none;
   font-size: 16px;
@@ -55,12 +50,10 @@ select {
   width: 200px;
 }
 
-/* Table Container */
 .table-container {
   overflow-x: auto;
 }
 
-/* Table Styling */
 .transactions-table {
   width: 100%;
   border-collapse: separate;
@@ -69,7 +62,7 @@ select {
   text-align: center;
 }
 
-.transactions-table th, 
+.transactions-table th,
 .transactions-table td {
   padding: 14px;
   border-radius: 12px;
@@ -93,7 +86,7 @@ select {
 
 .transactions-table .income {
   background-color: rgba(40, 167, 69, 0.2);
-  color: black
+  color: black;
 }
 
 .transactions-table .expense {
@@ -107,7 +100,8 @@ select {
   margin-top: 10px;
 }
 
-.csv-btn, .back-btn {
+.csv-btn,
+.back-btn {
   padding: 12px 18px;
   font-size: 16px;
   background-color: #28a745;
@@ -120,7 +114,8 @@ select {
   margin: 10px 0;
 }
 
-.csv-btn:hover, .back-btn:hover {
+.csv-btn:hover,
+.back-btn:hover {
   background-color: #218838;
 }
 
@@ -142,12 +137,12 @@ select {
   background-color: #343a40;
 }
 
-[data-theme="dark"] .transactions-table .income{
- color: white;
-}
-[data-theme="dark"] .transactions-table .expense{
+[data-theme="dark"] .transactions-table .income {
   color: white;
- }
+}
+[data-theme="dark"] .transactions-table .expense {
+  color: white;
+}
 
 [data-theme="dark"] .transactions-table tr:nth-child(even) td {
   background-color: rgba(40, 167, 69, 0.2);
@@ -157,8 +152,7 @@ select {
   background-color: rgba(226, 12, 45, 0.2);
 }
 
-@media(max-width: 470px){
-
+@media (max-width: 470px) {
   .transaction-history {
     width: 80%;
     top: 2rem;

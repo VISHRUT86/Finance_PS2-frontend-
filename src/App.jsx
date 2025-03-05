@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation , Navigate } from "react-router-dom";
-import GuestN from "./components/GuestN"; // ✅ Import Guest Navbar
-import Navbar from "./components/Navbar"; // ✅ Import User Navbar
+import GuestN from "./components/GuestN"; 
+import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Dashboard from "./components/Dashboard";
 import Income from "./components/Incomes";
@@ -40,7 +40,7 @@ function MainContent({ theme, toggleTheme }) {
   const isLoggedIn = !!localStorage.getItem("token");
   const location = useLocation();
 
-  const showFooter = location.pathname === "/"; // ✅ Only hide footer on the dashboard
+  const showFooter = location.pathname === "/"; 
 
   return (
     <>
@@ -65,7 +65,7 @@ function MainContent({ theme, toggleTheme }) {
         </Routes>
       </div>
 
-      {showFooter && <Footer />} {/* ✅ Conditional rendering of the footer */}
+      {showFooter && <Footer />}
     </>
   );
 }

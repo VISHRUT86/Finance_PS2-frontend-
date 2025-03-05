@@ -14,14 +14,20 @@ const Incomes = () => {
   const [loading, setLoading] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const categoryOptions = ["Salary", "Freelance", "Investment", "Gift", "Other"];
+  const categoryOptions = [
+    "Salary",
+    "Freelance",
+    "Investment",
+    "Gift",
+    "Other",
+  ];
 
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
       fetchIncomes();
     } else {
-      console.warn("⛔ No token found! Login required.");
+      console.log(" No token found! Login required.");
     }
   }, []);
 
@@ -48,7 +54,7 @@ const Incomes = () => {
       }
       setIncomes(data);
     } catch (error) {
-      console.error("⚠️ Fetch error:", error);
+      console.error(" Fetch error:", error);
       if (!retry) {
         setTimeout(() => fetchIncomes(true), 1000);
       } else {
@@ -64,7 +70,12 @@ const Incomes = () => {
   };
 
   const handleAddIncome = async () => {
-    if (!formData.source || !formData.amount || !formData.date || !formData.category) {
+    if (
+      !formData.source ||
+      !formData.amount ||
+      !formData.date ||
+      !formData.category
+    ) {
       alert("All fields are required!");
       return;
     }
@@ -90,7 +101,10 @@ const Incomes = () => {
     }
   };
 
-  const filteredIncomes = selectedCategory === "All" ? incomes : incomes.filter((income) => income.category === selectedCategory);
+  const filteredIncomes =
+    selectedCategory === "All"
+      ? incomes
+      : incomes.filter((income) => income.category === selectedCategory);
 
   return (
     <div className="income-container">
@@ -99,22 +113,53 @@ const Incomes = () => {
         <select onChange={(e) => setSelectedCategory(e.target.value)}>
           <option value="All">Filter by: All Categories</option>
           {categoryOptions.map((category, index) => (
-            <option key={index} value={category}>{category}</option>
+            <option key={index} value={category}>
+              {category}
+            </option>
           ))}
         </select>
       </div>
       <div className="income-form">
-        <input type="text" name="source" placeholder="Source" value={formData.source} onChange={handleChange} />
-        <input type="number" name="amount" placeholder="Amount (₹)" value={formData.amount} onChange={handleChange} />
-        <input type="date" name="date" value={formData.date} onChange={handleChange} />
-        <select name="category" value={formData.category} onChange={handleChange}>
+        <input
+          type="text"
+          name="source"
+          placeholder="Source"
+          value={formData.source}
+          onChange={handleChange}
+        />
+        <input
+          type="number"
+          name="amount"
+          placeholder="Amount (₹)"
+          value={formData.amount}
+          onChange={handleChange}
+        />
+        <input
+          type="date"
+          name="date"
+          value={formData.date}
+          onChange={handleChange}
+        />
+        <select
+          name="category"
+          value={formData.category}
+          onChange={handleChange}
+        >
           <option value="">Select Category</option>
           {categoryOptions.map((category, index) => (
-            <option key={index} value={category}>{category}</option>
+            <option key={index} value={category}>
+              {category}
+            </option>
           ))}
         </select>
       </div>
-      <button className="add-income-btn" onClick={handleAddIncome} disabled={loading}>{loading ? "Adding..." : "Add Your Income"}</button>
+      <button
+        className="add-income-btn"
+        onClick={handleAddIncome}
+        disabled={loading}
+      >
+        {loading ? "Adding..." : "Add Your Income"}
+      </button>
       {loading ? (
         <p>Loading...</p>
       ) : (
@@ -138,10 +183,19 @@ const Incomes = () => {
                 <tr key={income._id}>
                   <td>{income.source}</td>
                   <td>₹{income.amount}</td>
-                  <td>{new Date(income.date).toLocaleDateString("en-GB", { day: "2-digit", month: "2-digit", year: "numeric" })}</td>
+                  <td>
+                    {new Date(income.date).toLocaleDateString("en-GB", {
+                      day: "2-digit",
+                      month: "2-digit",
+                      year: "numeric",
+                    })}
+                  </td>
                   <td>{income.category}</td>
                   <td>
-                    <button className="delete-btn" onClick={() => handleDeleteIncome(income._id)}>
+                    <button
+                      className="delete-btn"
+                      onClick={() => handleDeleteIncome(income._id)}
+                    >
                       <FaTrash />
                     </button>
                   </td>

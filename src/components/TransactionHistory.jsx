@@ -1,10 +1,6 @@
-
-
-
-
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import Papa from "papaparse"; // Importing the CSV library
+import Papa from "papaparse";
 import { getExpenses } from "../services/expense";
 import { getIncomes } from "../services/income";
 import "./TransactionHistory.css";
@@ -33,7 +29,6 @@ const TransactionHistory = () => {
     }
   };
 
-  // ✅ Function to export transactions as CSV
   const exportToCSV = () => {
     const filteredTransactions = filterCategory
       ? transactions.filter((t) => t.category === filterCategory)
@@ -60,13 +55,13 @@ const TransactionHistory = () => {
   return (
     <div className="transaction1-history">
       <div className="back-btn-container">
-      <button className="back-btn" onClick={() => navigate("/dashboard")}>← Back</button>
-      
+        <button className="back-btn" onClick={() => navigate("/dashboard")}>
+          ← Back
+        </button>
       </div>
-      
+
       <h2>Transaction History</h2>
 
-      {/* ✅ Category Filter Dropdown */}
       <div className="filter-container">
         <label>Filter by Category:</label>
         <select
@@ -82,7 +77,6 @@ const TransactionHistory = () => {
         </select>
       </div>
 
-      {/* ✅ Transactions Table (Styled Like Previous One) */}
       <div className="table-container">
         <table className="transactions-table">
           <thead>
@@ -115,7 +109,6 @@ const TransactionHistory = () => {
         </table>
       </div>
 
-      {/* ✅ Download CSV Button (Moved Below Table) */}
       <div className="csv-btn-container">
         <button className="csv-btn" onClick={exportToCSV}>
           Download CSV

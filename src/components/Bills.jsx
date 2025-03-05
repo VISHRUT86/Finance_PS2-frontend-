@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { addBill, getBills, markBillAsPaid, deleteBill } from "../services/billService";
+import {
+  addBill,
+  getBills,
+  markBillAsPaid,
+  deleteBill,
+} from "../services/billService";
 import "./Bills.css";
 import axios from "axios";
-
 
 const Bills = () => {
   const [bills, setBills] = useState([]);
@@ -20,24 +24,27 @@ const Bills = () => {
   const fetchBills = async () => {
     try {
       const response = await getBills();
-      console.log("Fetched Bills:", response.data);  // ✅ Add this line
+      console.log("Fetched Bills:", response.data);
       setBills(response.data);
     } catch (error) {
       console.log("Error fetching bills:", error);
     }
   };
-   // ✅ Fetch Notifications
-   const fetchNotifications = async () => {
+
+  const fetchNotifications = async () => {
     const token = localStorage.getItem("token");
     try {
-        const response = await axios.get("http://localhost:5000/api/notifications", {
-            headers: { Authorization: `Bearer ${token}` },
-        });
-        setNotifications(response.data);
+      const response = await axios.get(
+        "http://localhost:5000/api/notifications",
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
+      setNotifications(response.data);
     } catch (error) {
-        console.error("Error fetching notifications:", error);
+      console.error("Error fetching notifications:", error);
     }
-};
+  };
   const handleAddBill = async (e) => {
     e.preventDefault();
     if (new Date(newBill.dueDate) < new Date()) {
@@ -56,43 +63,42 @@ const Bills = () => {
 
   const handleMarkAsPaid = async (id) => {
     try {
-        console.log("🔄 Marking bill as paid...");
+      console.log("🔄 Marking bill as paid...");
 
-        const response = await axios.put(`http://localhost:5000/api/bills/mark-paid/${id}`);
-        
-        console.log("✅ Response:", response.data);
+      const response = await axios.put(
+        `http://localhost:5000/api/bills/mark-paid/${id}`
+      );
 
-        // ✅ UI se bill remove karna
-        setBills((prevBills) => prevBills.map((bill) =>
-            bill._id === id ? { ...bill, status: "Paid" } : bill
-        ));
+      console.log(" Response:", response.data);
 
-        // ✅ Notifications fetch karke update karna
-        fetchNotifications();
+      setBills((prevBills) =>
+        prevBills.map((bill) =>
+          bill._id === id ? { ...bill, status: "Paid" } : bill
+        )
+      );
 
+      fetchNotifications();
     } catch (error) {
-        console.log("❌ Error marking bill as paid:", error);
+      console.log(" Error marking bill as paid:", error);
     }
-};
+  };
   const handleDeleteBill = async (id) => {
     try {
-        console.log("🔄 Deleting bill...");
+      console.log("🔄 Deleting bill...");
 
-        const response = await axios.delete(`http://localhost:5000/api/bills/delete/${id}`);
-        
-        console.log("✅ Response:", response.data);
+      const response = await axios.delete(
+        `http://localhost:5000/api/bills/delete/${id}`
+      );
 
-        // ✅ UI se bill remove karna
-        setBills((prevBills) => prevBills.filter((bill) => bill._id !== id));
+      console.log(" Response:", response.data);
 
-        // ✅ Notifications fetch karke update karna
-        fetchNotifications();
+      setBills((prevBills) => prevBills.filter((bill) => bill._id !== id));
 
+      fetchNotifications();
     } catch (error) {
-        console.log("❌ Error deleting bill:", error);
+      console.log("Error deleting bill:", error);
     }
-};
-  
+  };
 
   return (
     <div className="bills-container">
@@ -152,13 +158,19 @@ const Bills = () => {
             {bills.map((bill) => {
               const dueDate = new Date(bill.dueDate);
               const today = new Date();
-              const diffDays = Math.ceil((dueDate - today) / (1000 * 60 * 60 * 24));
+              const diffDays = Math.ceil(
+                (dueDate - today) / (1000 * 60 * 60 * 24)
+              );
 
               return (
                 <tr
                   key={bill._id}
                   className={
-                    bill.status === "Due" && diffDays < 0 ? "due-bill" : diffDays <= 3 ? "warning-bill" : ""
+                    bill.status === "Due" && diffDays < 0
+                      ? "due-bill"
+                      : diffDays <= 3
+                      ? "warning-bill"
+                      : ""
                   }
                 >
                   <td>{bill.title}</td>
@@ -168,9 +180,20 @@ const Bills = () => {
                   <td>{bill.status}</td>
                   <td>
                     {bill.status === "Due" && (
-                      <button className="btn" onClick={() => handleMarkAsPaid(bill._id)}>Mark as Paid</button>
+                      <button
+                        className="btn"
+                        onClick={() => handleMarkAsPaid(bill._id)}
+                      >
+                        Mark as Paid
+                      </button>
                     )}
-                    <button className="btn" onClick={() => handleDeleteBill(bill._id)}> Delete</button>
+                    <button
+                      className="btn"
+                      onClick={() => handleDeleteBill(bill._id)}
+                    >
+                      {" "}
+                      Delete
+                    </button>
                   </td>
                 </tr>
               );
