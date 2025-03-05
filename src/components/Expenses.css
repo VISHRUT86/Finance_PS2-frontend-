@@ -1,0 +1,139 @@
+/* Expenses.css */
+
+/* Container Styling */
+.expenses-container {
+    max-width: 900px;
+    margin: 45px auto;
+    background: #dfebdf;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, 
+                rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, 
+                rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    text-align: center;
+}
+
+/* Heading */
+.expenses-container h2 {
+    color: black;
+    font-size: 26px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Form Styling */
+.add-expense {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.add-expense input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 200px;
+    font-size: 16px;
+}
+
+.add-expense button {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.add-expense button:hover {
+    background-color: #c9302c;
+}
+
+/* Table Styling */
+.expenses-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 10px;
+    margin-top: 20px;
+    text-align: center; /* Ensures text alignment is centered */
+}
+
+.expenses-table th, 
+.expenses-table td {
+    padding: 14px;
+    text-align: center; /* Centers text inside each cell */
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.expenses-table thead {
+    text-align: center;
+}
+
+.expenses-table th {
+    background: #1e1e2f;
+    color: white;
+}
+
+.expenses-table tr:nth-child(even) td {
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+.expenses-table tr:nth-child(odd) td {
+    background-color: rgba(9, 201, 54, 0.1);
+}
+
+/* Delete Button */
+.delete-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #d9534f;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.delete-btn:hover {
+    color: #c9302c;
+}
+
+/* Filters */
+.filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.filters select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Dark Mode Support */
+[data-theme="dark"] .expenses-container h2{
+    color: white;
+}
+[data-theme="dark"] .expenses-container {
+    background-color: #020b29;
+    color: #ccc;
+}
+
+[data-theme="dark"] .expenses-table th {
+    background-color: #343a40;
+}
+
+[data-theme="dark"] .expenses-table tr:nth-child(even) td {
+    background-color: rgba(226, 12, 45, 0.2);
+}
+
+[data-theme="dark"] .expenses-table tr:nth-child(odd) td {
+    background-color: rgba(40, 167, 69, 0.2);
+}

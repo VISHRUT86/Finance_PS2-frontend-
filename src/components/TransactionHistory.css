@@ -1,0 +1,150 @@
+/* Transaction.css */
+.transaction-table{
+  border-radius: 20px;
+}
+/* Container Styling */
+.transaction1-history {
+  max-width: 900px;
+  margin: 20px auto;
+  background: #dfebdf;
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, 
+              rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, 
+              rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  text-align: center;
+}
+
+/* Heading */
+h2 {
+  color: #28a745;
+  font-size: 26px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+/* Filter Dropdown */
+.filter-container {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.filter-container label {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #1e1e2f;
+}
+
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 200px;
+}
+
+/* Table Container */
+.table-container {
+  overflow-x: auto;
+}
+
+/* Table Styling */
+.transactions-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 10px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.transactions-table th, 
+.transactions-table td {
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.transactions-table th {
+  background-color: #1e1e2f;
+  color: white;
+}
+
+.transactions-table tr:nth-child(even) td {
+  background-color: rgba(40, 167, 69, 0.1);
+}
+
+.transactions-table tr:nth-child(odd) td {
+  background-color: rgba(220, 53, 69, 0.1);
+}
+
+.transactions-table .income {
+  background-color: rgba(40, 167, 69, 0.2);
+  color: black
+}
+
+.transactions-table .expense {
+  background-color: rgba(220, 53, 69, 0.2);
+  color: #721c24;
+}
+
+/* CSV Button */
+.csv-btn-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.csv-btn, .back-btn {
+  padding: 12px 18px;
+  font-size: 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.csv-btn:hover, .back-btn:hover {
+  background-color: #218838;
+}
+
+/* Back Button */
+.back-btn {
+  margin-bottom: 15px;
+  position: relative;
+    right: 371px;
+}
+
+/* Dark Mode Support */
+[data-theme="dark"] .transaction1-history {
+  background-color: #020b29;
+  color: #ccc;
+}
+[data-theme="dark"] .transaction1-history h2 {
+  
+  color: white;
+}
+
+[data-theme="dark"] .transactions-table th {
+  background-color: #343a40;
+}
+
+[data-theme="dark"] .transactions-table .income{
+ color: white;
+}
+[data-theme="dark"] .transactions-table .expense{
+  color: white;
+ }
+
+[data-theme="dark"] .transactions-table tr:nth-child(even) td {
+  background-color: rgba(40, 167, 69, 0.2);
+}
+
+[data-theme="dark"] .transactions-table tr:nth-child(odd) td {
+  background-color: rgba(226, 12, 45, 0.2);
+}

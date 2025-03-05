@@ -1,0 +1,466 @@
+/* Main Container */
+.container {
+  width: 100%;
+  max-width: 1642.22px;
+  margin: 0 auto;
+}
+
+.main-container {
+  background: #dfebdf;
+  padding: 235px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Sticker Animations */
+.homemoney3 {
+  background-image: url('your-sticker-image.png');
+  background-size: cover;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.homemoney3:hover {
+  transform: rotateY(360deg);
+}
+
+@keyframes rotate-sticker {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.homemoney2 {
+  background-image: url('your-sticker-image.png');
+  background-size: cover;
+  animation: rotate-sticker 5s linear infinite;
+}
+
+.homemoney {
+  background-image: url('your-sticker-image.png');
+  background-size: cover;
+  transition: transform 0.5s ease;
+}
+
+.homemoney:hover {
+  transform: rotate(180deg);
+}
+
+/* Button Styles */
+.gets {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 55px;
+  width: 160px;
+  text-align: center;
+  background-color: #399543;
+  font-weight: bold;
+  border: 3px solid white;
+  margin: 23px 183px;
+  border-radius: 18px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease, transform 0.2s;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+              rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+              rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.gets-link {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  transition: color 0.3s;
+}
+
+.gets:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 20px,
+              rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+              rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  background-color: #2d7f34;
+}
+
+.gets-link:hover {
+  color: white;
+}
+
+.gets::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.4);
+  transition: all 0.6s ease;
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+}
+
+.gets:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0;
+}
+
+/* Text Section */
+.fortext h1 {
+  text-align: center;
+  width: 50%;
+  padding: 50px 0px;
+  font-size: 86px;
+  text-shadow: 1px 1px 1px;
+}
+
+.fortext {
+  font-weight: 300;
+  color: white;
+  height: 855px;
+  font-size: 25px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1)), url('https://www.cohnreznick.com/-/media/project/cohnreznick-sites/cohnreznick/cohnreznick-site/financialsponsors-services_home-page_1980x1080.jpg?h=1080&iar=0&w=1980&hash=43AAE51FEFEF0D2B5C10D5B004599C40');
+  font-style: italic;
+}
+
+/* Home Container */
+.home-container {
+  width: 90%;
+  max-width: 1530px;
+  background-color: white;
+  color: #191919;
+  text-align: center;
+  min-height: 65vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 18px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  justify-content: center;
+  margin-bottom: 30px;
+  padding: 50px;
+  transition: transform 0.3s;
+  position: relative;
+  top: -240px;
+  margin: 50px auto;
+  font-family: "alegreya-sans-sc", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Dark Mode */
+[data-theme="dark"] .home-container {
+  background-color: #020b29;
+  color: #ccc;
+}
+
+[data-theme="dark"] .main-container {
+  background-color: #3a4b40;
+}
+
+/* Header Container */
+.header-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+}
+
+/* Right Side Content */
+.homeright {
+  max-width: 500px;
+  text-align: center;
+}
+
+/* Title */
+.home-title {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #28a745;
+}
+
+[data-theme="dark"] .home-title {
+  color: #00ffcc;
+}
+
+/* Description */
+.home-description {
+  font-size: 28px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+[data-theme="dark"] .home-description {
+  color: #cccccc;
+}
+
+/* Navbar Right */
+.navbar-right {
+  display: flex;
+  justify-content: center;
+}
+
+/* Auth Links */
+.auth-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  padding: 0;
+}
+
+.auth-links li {
+  display: inline-block;
+}
+
+/* Button Styles */
+.login-btn,
+.signup-btn {
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Light Mode Buttons */
+.login-btn {
+  background: transparent;
+  color: black;
+  border: 2px solid black;
+}
+
+.signup-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+}
+
+/* Dark Mode Buttons */
+[data-theme="dark"] .login-btn {
+  color: white;
+  border-color: white;
+}
+
+[data-theme="dark"] .signup-btn {
+  background: #218838;
+}
+
+/* Hover Effects */
+.login-btn:hover {
+  background: black;
+  color: white;
+}
+
+.signup-btn:hover {
+  background: #196c2e;
+  transform: translateY(-3px);
+}
+
+/* Theme Toggle Image */
+.dayNpic {
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  height: 35px;
+  padding: 0 9px;
+  position: relative;
+  top: 17px;
+}
+
+.daypic {
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  height: 35px;
+  padding: 0 9px;
+}
+
+.daypic:hover {
+  transform: scale(1.1);
+}
+
+/* Finance Tracker Image */
+.homep {
+  height: 450px;
+  border-radius: 28px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  transition: transform 0.3s ease;
+}
+
+.homemoney {
+  height: 125px;
+}
+
+.homemoney2 {
+  height: 95px;
+}
+
+.homemoney3 {
+  height: 93px;
+}
+
+.homeMD {
+  margin: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(11, 18, 58);
+  width: 130px;
+  height: 130px;
+  border-radius: 147px;
+}
+
+.MD {
+  display: flex;
+}
+
+[data-theme="dark"] .homep {
+  filter: brightness(0.8);
+}
+
+.homep:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 1642px) {
+  .main-container {
+    padding: 150px 0;
+  }
+
+  .home-container {
+    top: -150px;
+  }
+
+  .fortext h1 {
+    font-size: 64px;
+  }
+
+  .homep {
+    height: 350px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .main-container {
+    padding: 100px 0;
+  }
+
+  .home-container {
+    top: -100px;
+  }
+
+  .fortext h1 {
+    font-size: 48px;
+  }
+
+  .homep {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    padding: 50px 0;
+  }
+
+  .home-container {
+    top: -50px;
+    padding: 30px;
+  }
+
+  .fortext h1 {
+    font-size: 36px;
+    width: 80%;
+  }
+
+  .homep {
+    height: 250px;
+  }
+
+  .daypic {
+    top: 15px;
+    right: 20px;
+  }
+
+  .gets {
+    margin: 23px auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-container {
+    padding: 60px 0;
+  }
+
+  .daypic{
+    height: 60px;
+  }
+  .dayNpic{
+    height: 38px;
+    width: 65px;
+  }
+
+  .home-container {
+    top: -30px;
+    padding: 20px;
+  }
+
+  .fortext h1 {
+    font-size: 24px;
+    width: 90%;
+  }
+
+  .homep {
+    height: 200px;
+  }
+
+  .gets {
+    width: 140px;
+    height: 50px;
+    font-size: 16px;
+  }
+
+  .login-btn,
+  .signup-btn {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+  .homeMD{
+    height: 77px;
+    width: 77px;
+  }
+  .homemoney{
+    height: 55px;
+  }
+  .homemoney2{
+    height: 55px;
+  }
+  .homemoney3{
+    height: 55px;
+  }
+  .MD{
+    display: flex;
+    justify-content: center;
+  }
+}

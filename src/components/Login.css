@@ -1,0 +1,365 @@
+
+
+/* Container Styling */
+.container{
+    height: 950px;
+}
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2111px;
+    background-color: #dfebdf; /* Consistent background */
+    padding: 20px;
+    box-sizing: border-box;
+    height: 1193px;
+    position: relative;
+    top: -240px;
+}
+
+/* Login Box */
+.login-box {
+    background: white;
+    padding: 2rem;
+    border-radius: 18px;
+    width: 400px;
+    height: 600px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, 
+                rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, 
+                rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.login-box:hover {
+    transform: scale(1.03);
+}
+
+/* Heading */
+.login-box h2 {
+    margin-bottom: 1rem;
+    font-size: 28px;
+    color: white; /* Green color for headings */
+    font-weight: bold;
+}
+
+/* Input Fields */
+.login-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 20px;
+    transition: border-color 0.3s;
+}
+
+.login-box input:focus {
+    border-color: #28a745;
+    outline: none;
+}
+
+/* Button Styles */
+.login-box button {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.login-box button:hover {
+    background-color: #218838;
+    transform: translateY(-3px);
+}
+
+/* Signup Link */
+.signup-link {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #1e1e2f;
+}
+
+.signup-link a {
+    color: #28a745;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+    color: #218838;
+}
+
+/* Image Styling */
+
+.logimg, .lgimg {
+    border-radius: 18px;
+    /* box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, 
+                rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, 
+                rgba(0, 0, 0, 0.2) 0px -3px 0px inset; */
+    transition: transform 0.3s ease;
+    /* margin: 20px; */
+}
+
+.logimg {
+    height: 500px;
+    
+}
+
+.lgimg {
+    height: 600px;
+    margin: 90px;
+    -webkit-animation: bounce 2s ease-in-out infinite alternate-reverse both;
+}
+
+.logimg:hover, .lgimg:hover {
+    transform: scale(1.05);
+}
+
+/* Dark Mode Support */
+
+[data-theme="dark"] .signup-link {
+    /* background-color: #1e1e2f; */
+    color: #ccc;
+}
+
+[data-theme="dark"] .login-box h2 {
+     
+    color: white;
+}
+
+
+[data-theme="dark"] .login-container {
+    background-color: #3a4b40;
+    color: #ccc;
+}
+
+
+/* Container Styling */
+.container{
+    height: 950px;
+}
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2111px;
+    background-color: #dfebdf; /* Consistent background */
+    padding: 20px;
+    box-sizing: border-box;
+    height: 1193px;
+    position: relative;
+    top: -240px;
+}
+
+/* Login Box */
+.login-box {
+    background: white;
+    padding: 2rem;
+    border-radius: 18px;
+    width: 400px;
+    height: 600px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, 
+                rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, 
+                rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.login-box:hover {
+    transform: scale(1.03);
+}
+
+/* Heading */
+.login-box h2 {
+    margin-bottom: 1rem;
+    font-size: 28px;
+    color: #28a745; /* Green color for headings */
+    font-weight: bold;
+}
+
+/* Input Fields */
+.login-box input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 20px;
+    transition: border-color 0.3s;
+}
+
+.login-box input:focus {
+    border-color: #28a745;
+    outline: none;
+}
+
+/* Button Styles */
+.login-box button {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.login-box button:hover {
+    background-color: #218838;
+    transform: translateY(-3px);
+}
+
+/* Signup Link */
+.signup-link {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #1e1e2f;
+}
+
+.signup-link a {
+    color: #28a745;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+    color: #218838;
+}
+
+/* Image Styling */
+/* .lgimg{
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, 
+                rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, 
+                rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+} */
+.logimg, .lgimg {
+    border-radius: 18px;
+    transition: transform 0.3s ease;
+
+}
+
+.logimg {
+    height: 500px;
+    
+}
+/* Bounce Animation */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.lgimg {
+    height: 600px;
+    margin: 90px;
+}
+
+.logimg:hover:hover {
+    transform: scale(1.05);
+}
+
+/* Dark Mode Support */
+
+[data-theme="dark"] .signup-link {
+    /* background-color: #1e1e2f; */
+    color: #ccc;
+}
+
+
+[data-theme="dark"] .login-box {
+    background-color: #020b29;
+    color: #ccc;
+}
+
+[data-theme="dark"] .login-box input {
+    background-color: #2c2c3b;
+    border-color: #555;
+    /* color: #ccc; */
+}
+
+[data-theme="dark"] .login-box input:focus {
+    border-color: #28a745;
+}
+
+[data-theme="dark"] .login-box button {
+    background-color: #218838;
+}
+
+[data-theme="dark"] .login-box button:hover {
+    background-color: #196c2e;
+}
+
+[data-theme="dark"] .signup-link a {
+    color: #28a745;
+}
+
+[data-theme="dark"] .login-box input:focus {
+    border-color: #28a745;
+}
+
+[data-theme="dark"] .login-box button {
+    background-color: #218838;
+}
+
+[data-theme="dark"] .login-box button:hover {
+    background-color: #196c2e;
+}
+
+[data-theme="dark"] .signup-link a {
+    color: #28a745;
+}
+@media (max-width: 768px) {
+   .lgimg{
+    display: none;
+   }
+   .login-box{
+    width: 300px;
+   }
+   .logimg{
+    height: 400px;
+   }
+  }

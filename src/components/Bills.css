@@ -1,0 +1,183 @@
+/* Bill.css */
+
+
+
+
+
+/* Button Styling */
+.bills-list .btn {
+  
+  background-color: rgb(173, 235, 224);
+  color: #1e1e2f;
+  color: black; 
+  height: 38px;
+  border-style: none;
+  margin: 0 5px;
+  font-weight: bold;
+  padding: 0 10px; /* Adds horizontal padding for better spacing */
+  border-radius: 12px; /* Optional: Adds slight rounding to corners */
+  cursor: pointer;
+  font-size: 16px; /* Ensures consistent font size */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+}
+
+.bills-list .btn:hover {
+  background-color: darkred; /* Darker shade on hover */
+  color: #fff; /* Ensures text remains visible */
+}
+
+[data-theme="dark"] .bills-list .btn {
+ 
+  background-color: rgb(52 58 64);
+  color: rgb(57, 214, 162); 
+}
+.container{
+  background-color: rgb(212, 203, 203);
+}
+
+
+/* Container Styling */
+.bills-container h1{
+  padding: 22px 0px;
+  color: black;
+}
+.bills-container {
+  max-width: 900px;
+  margin: 20px auto;
+  background: #dfebdf;
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, 
+              rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, 
+              rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  text-align: center;
+}
+
+/* Heading */
+.bills-heading {
+  color: #28a745;
+  font-size: 26px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+/* Form Styling */
+.bill-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.bill-form input,
+.bill-form select {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 180px;
+  font-size: 16px;
+  margin: 12px 0px;
+}
+
+.bill-form button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+  font-weight: bold;
+  margin: 12px 0px;
+}
+
+.bill-form button:hover {
+  background-color: #218838;
+}
+
+/* Table Styling */
+.bills-list table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 10px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.bills-list th, 
+.bills-list td {
+  padding: 14px;
+  text-align: center;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.bills-list thead {
+  text-align: center;
+}
+
+.bills-list th {
+  background: #1e1e2f;
+  color: white;
+}
+
+.bills-list tr:nth-child(even) td {
+  background-color: rgba(40, 167, 69, 0.1);
+}
+
+.bills-list tr:nth-child(odd) td {
+  background-color: rgba(220, 53, 69, 0.1);
+}
+
+/* Button Styling */
+.bills-list button {
+  background: none;
+  border: 2px solid black;
+  font-size: 20px;
+  color: #dc3545;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.bills-list button:hover {
+  color: #c9302c;
+}
+
+/* Dark Mode Support */
+[data-theme="dark"] .bills-container {
+  background-color: #020b29;
+  color: #ccc;
+}
+
+[data-theme="dark"] .bills-list th {
+  background-color: #343a40;
+}
+
+[data-theme="dark"] .bills-list tr:nth-child(even) td {
+  background-color: rgba(40, 167, 69, 0.2);
+}
+
+[data-theme="dark"] .bills-list tr:nth-child(odd) td {
+  background-color: rgba(226, 12, 45, 0.2);
+}
+[data-theme="dark"] .bills-container h1{
+  color: white;
+}
+[data-theme="dark"] .bills-container h2{
+  color: white;
+}
+
+.due-bill {
+  background-color: #ffcccc !important;
+  color: red;
+  font-weight: bold;
+}
+
+.warning-bill {
+  background-color: #fff3cd !important;
+  color: #856404;
+  font-weight: bold;
+}

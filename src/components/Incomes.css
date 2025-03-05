@@ -1,0 +1,218 @@
+/* Income.css */
+
+/* Container Styling */
+.container{
+    padding: 1px;
+}
+.income-container {
+    max-width: 900px;
+    margin: 45px auto;
+    background: #dfebdf;
+    padding: 45px;
+    border-radius: 18px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, 
+                rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, 
+                rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    text-align: center;
+}
+
+/* Heading */
+.income-heading {
+    color: black;
+    font-size: 26px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Form Styling */
+.income-form {
+    
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+input{
+    background: linear-gradient(135deg, #f3a092, #ebfd9a);
+    border: none;
+}
+
+.income-form input {
+
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 200px;
+    font-size: 16px;
+}
+
+.income-form button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.income-form button:hover {
+    background-color: #218838;
+}
+
+/* Table Styling */
+.income-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 10px;
+    margin-top: 20px;
+    text-align: center; /* Ensures text alignment is centered */
+}
+
+.income-table th, 
+.income-table td {
+    padding: 14px;
+    text-align: center; /* Centers text inside each cell */
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.income-table thead {
+    text-align: center;
+}
+
+.income-table th {
+    background: #1e1e2f;
+    color: white;
+}
+
+.income-table tr:nth-child(even) td {
+    background-color: rgba(40, 167, 69, 0.1);
+}
+
+.income-table tr:nth-child(odd) td {
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+/* Delete Button */
+.delete-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #dc3545;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.delete-btn:hover {
+    color: #c9302c;
+}
+
+/* Filters */
+.filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.filters select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Dark Mode Support */
+[data-theme="dark"] .income-container {
+    background-color: #020b29;
+    color: #ccc;
+}
+[data-theme="dark"] .income-heading {
+  
+    color: white;
+}
+[data-theme="dark"] .container {
+    background-color: #3a4b40;
+    /* color: #ccc; */
+}
+
+[data-theme="dark"] .income-table th {
+    background-color: #343a40;
+}
+
+[data-theme="dark"] .income-table tr:nth-child(even) td {
+    background-color: rgba(40, 167, 69, 0.2);
+}
+
+[data-theme="dark"] .income-table tr:nth-child(odd) td {
+    background-color: rgba(226, 12, 45, 0.2);
+}
+/* Add Income CSS */
+.add-income {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+/* Input & Select Styles */
+.add-income input,
+.add-income select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 200px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.add-income input:focus,
+.add-income select:focus {
+    border-color: #28a745;
+    outline: none;
+}
+
+/* Button Styling */
+.add-income-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.add-income-btn:hover:not(:disabled) {
+    background-color: #218838;
+    transform: translateY(-3px);
+}
+
+.add-income-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Dark Mode Support */
+[data-theme="dark"] .add-income input,
+[data-theme="dark"] .add-income select {
+    background-color: #2c2c3b;
+    border-color: #555;
+    color: #ccc;
+}
+
+[data-theme="dark"] .add-income-btn {
+    background-color: #218838;
+}
+
+[data-theme="dark"] .add-income-btn:hover:not(:disabled) {
+    background-color: #196c2e;
+}
