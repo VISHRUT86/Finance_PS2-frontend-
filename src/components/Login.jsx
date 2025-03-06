@@ -25,7 +25,7 @@ const Login = () => {
       if (response.ok) {
         toast.success("🎉 Login Successful!", {
           position: "top-right",
-          autoClose: 1500,
+          autoClose: 1000,
           hideProgressBar: true,
           closeOnClick: true,
           pauseOnHover: true,
@@ -38,7 +38,7 @@ const Login = () => {
 
         setTimeout(() => {
           navigate("/dashboard");
-        }, 1500);
+        }, 1000);
       } else {
         toast.error(
           <div style={{ display: "flex", alignItems: "center" }}>
@@ -47,7 +47,7 @@ const Login = () => {
           </div>,
           {
             position: "top-right",
-            autoClose: 1500,
+            autoClose: 1000,
             hideProgressBar: true,
             closeOnClick: true,
             pauseOnHover: true,

@@ -39,7 +39,7 @@ const Signup = () => {
         setTimeout(() => {
           navigate("/dashboard");
          
-        }, 1500);
+        }, 1000);
       } else {
         toast.error(data.message || "❌ Signup Failed", {
           position: "top-right",
