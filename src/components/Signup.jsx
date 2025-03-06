@@ -38,7 +38,7 @@ const Signup = () => {
 
         setTimeout(() => {
           navigate("/dashboard");
-          window.location.reload();
+         
         }, 1500);
       } else {
         toast.error(data.message || "❌ Signup Failed", {
