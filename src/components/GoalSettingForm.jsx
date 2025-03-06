@@ -22,7 +22,7 @@ const GoalSettingForm = ({ onClose, onGoalSet = () => {} }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/goals",
+        "https://finance-ps2-backend.onrender.com/goals",
         { userId, annualGoal },
         { withCredentials: true }
       );

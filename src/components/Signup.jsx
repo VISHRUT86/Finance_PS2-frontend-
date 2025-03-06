@@ -12,7 +12,7 @@ const Signup = () => {
 
   const handleSignup = async () => {
     try {
-      const response = await fetch("http://localhost:5000/auth/signup", {
+      const response = await fetch("https://finance-ps2-backend.onrender.com/auth/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

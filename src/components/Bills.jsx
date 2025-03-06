@@ -35,7 +35,7 @@ const Bills = () => {
     const token = localStorage.getItem("token");
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/notifications",
+        "https://finance-ps2-backend.onrender.com/api/notifications",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -66,7 +66,7 @@ const Bills = () => {
       console.log("🔄 Marking bill as paid...");
 
       const response = await axios.put(
-        `http://localhost:5000/api/bills/mark-paid/${id}`
+        `https://finance-ps2-backend.onrender.com/api/bills/mark-paid/${id}`
       );
 
       console.log(" Response:", response.data);
@@ -87,7 +87,7 @@ const Bills = () => {
       console.log("🔄 Deleting bill...");
 
       const response = await axios.delete(
-        `http://localhost:5000/api/bills/delete/${id}`
+        `https://finance-ps2-backend.onrender.com/api/bills/delete/${id}`
       );
 
       console.log(" Response:", response.data);

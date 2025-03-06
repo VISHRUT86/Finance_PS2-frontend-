@@ -19,7 +19,7 @@ const Notifications = () => {
 
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/notifications",
+        "https://finance-ps2-backend.onrender.com/api/notifications",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -46,7 +46,7 @@ const Notifications = () => {
       }
 
       await axios.put(
-        `http://localhost:5000/api/notifications/mark-read/${id}`,
+        `https://finance-ps2-backend.onrender.com/api/notifications/mark-read/${id}`,
         { isRead: true },
         { headers: { Authorization: `Bearer ${token}` } }
       );

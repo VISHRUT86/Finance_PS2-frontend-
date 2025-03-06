@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:5000"; // Backend URL
+const API_BASE_URL = "https://finance-ps2-backend.onrender.com"; // Backend URL
 
 // Token ko localStorage se uthao
 const getAuthToken = () => {
